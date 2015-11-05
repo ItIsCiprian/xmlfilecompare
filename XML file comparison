@@ -1,0 +1,9 @@
+from lxml import etree
+
+tree1 = etree.parse('example1.xml')
+tree2 = etree.parse('example2.xml')
+
+set1 = set(etree.tostring(i,) for i in tree1.getroot())
+set2 = set(etree.tostring(i,) for i in tree2.getroot())
+
+print set1 == set2
